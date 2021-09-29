@@ -8,11 +8,19 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',pathMatch:'full'
+    redirectTo: 'inicio',pathMatch:'full'
   },
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'recover',
+    loadChildren: () => import('./recover/recover.module').then( m => m.RecoverPageModule)
+  },
+  {
+    path: 'bienve',
+    loadChildren: () => import('./bienve/bienve.module').then( m => m.BienvePageModule)
   }
 ];
 @NgModule({

@@ -3,20 +3,29 @@ import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-recover',
+  templateUrl: './recover.page.html',
+  styleUrls: ['./recover.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class RecoverPage implements OnInit {
   correo: string;
-  contrasena: string;
   constructor(public alertController:AlertController,private router:Router,public loadingcontroller:LoadingController) {
-    this.correo='';
-    this.contrasena='';
-
+    this.correo=''
    }
 
   ngOnInit() {
+  }
+  async alerta(){
+    const alert= await this.alertController.create({
+      message:'Nota: se le enviara un mensaje al correo ingresado para la confirmacion',
+      buttons:[{
+        text:'aceptar',
+        handler:()=>{
+            this.router.navigate(['/inicio'])
+        }
+      }]
+    }) 
+    await alert.present()
   }
   async cargando(){
     const cargando= await this.loadingcontroller.create({
@@ -26,15 +35,13 @@ export class LoginPage implements OnInit {
     await cargando.present()
   }
   async enviar(){
-    const usuario=this.correo.substr(0,this.correo.indexOf('@'))
-    localStorage.setItem('username',usuario || this.correo)
     await this.cargando();
     setTimeout(()=>{
-    this.router.navigate(['/bienve']);
+    this.alerta();
     },2000)
   }
   async validar(){
-    if (this.correo == '' || this.contrasena =='' ){
+    if (this.correo == ''){
       const alert= await this.alertController.create({
         message:'Error: campos vacios',
         buttons:['aceptar']
@@ -45,6 +52,3 @@ export class LoginPage implements OnInit {
     }
   }
 }
-
-
-

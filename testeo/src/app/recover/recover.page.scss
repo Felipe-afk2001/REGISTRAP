@@ -4,10 +4,11 @@
     --padding-start: 15px; 
     background-color: #fff;
     &.morado{
-        padding:20px 60px;
+        padding:20px 10px;
         border-radius: 45px;
         background-color: rgb(14,29,48);
         margin-top: 20%;
+        margin-bottom: 55px;
         color:#FFB800;
     }
 }
@@ -19,7 +20,7 @@
     --border-radius: 30px;
     font-size: 30px;
     margin: 0 auto;
-    margin-top: 35px;
+    margin-top: 100px;
     
     
     &.rojo{
@@ -41,7 +42,8 @@ ion-label{
     font-size: 30px;
 }
 h1{
-    font-size: 50px;
+    font-size: 30px;
+    padding-inline-end: 15px;
 }
 .base{
     --ion-background-color:rgb(225, 224, 221) ;
@@ -55,11 +57,11 @@ h1{
     &.abajo{
         padding-top: 50px;
     }
-   
 }
 h3{
-        margin-left: 10px;
-    }
+    margin-left: 10px;
+}
+
 .centro{
     text-align: center;
     margin-top: 10px;

@@ -19,7 +19,7 @@
     --border-radius: 30px;
     font-size: 30px;
     margin: 0 auto;
-    margin-top: 35px;
+    margin-top: 100px;
     
     
     &.rojo{
@@ -52,9 +52,7 @@ h1{
     border: 1px solid rgb(14,29,48);
     background-color: #FFB800;
     margin: auto;
-    &.abajo{
-        padding-top: 50px;
-    }
+    padding-top: 50px;
    
 }
 h3{
@@ -63,4 +61,8 @@ h3{
 .centro{
     text-align: center;
     margin-top: 10px;
+}
+a{
+    color: rgb(14,29,48);
+    text-decoration: none;
 }
